@@ -138,31 +138,21 @@ make run_main
 
 ---
 
-##  Test Example: Dijkstra Cycle Prevention
+##  Test Example: BFS - Disconnected Components
 
 ```cpp
-TEST_CASE("Dijkstra - Result tree has no cycles") {
-    Graph g(5);
-    g.addEdge(0, 1, 2);
-    g.addEdge(1, 2, 3);
-    g.addEdge(1, 3, 1);
-    g.addEdge(3, 4, 4);
-    g.addEdge(0, 4, 100); // will not be selected
-
-    Graph result = Algorithms::dijkstra(g, 0);
-
-    DisjointSet ds(result.getNumVertices());
-    bool hasCycle = false;
-    for (int u = 0; u < 5; u++) {
-        for (int v = u + 1; v < 5; v++) {
-            if (result.isEdge(u, v)) {
-                if (ds.find(u) == ds.find(v)) hasCycle = true;
-                else ds.unite(u, v);
-            }
-        }
-    }
-    CHECK_FALSE(hasCycle);
+TEST_CASE("BFS - Disconnected Components") {
+    Graph g(6);
+    g.addEdge(0, 1);
+    g.addEdge(1, 2);
+    g.addEdge(3, 4);
+    g.addEdge(4, 5);
+    Graph bfsTree = Algorithms::bfs(g, 0);
+    CHECK(bfsTree.isEdge(0, 1));
+    CHECK(bfsTree.isEdge(1, 2));
+    CHECK_FALSE(bfsTree.isEdge(3, 4));
 }
+
 ```
 
 ---
