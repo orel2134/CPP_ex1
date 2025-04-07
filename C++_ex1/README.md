@@ -36,7 +36,7 @@ All classes and functions are wrapped under the `graph` namespace.
 
 ### `Graph`
 
-Represents a weighted, undirected graph using an **adjacency matrix**. No STL is used.
+Represents a weighted, undirected graph using an **Adjacency List.**. No STL is used.
 
 **Key Methods:**
 - `addEdge(u, v, weight)` – Adds an edge from `u` to `v` with the given weight.
