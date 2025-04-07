@@ -137,6 +137,18 @@ make run_main
 | **Kruskal** | Minimum Spanning Tree | MST using edge sorting + disjoint and returns a graph showing the tree. |
 
 ---
+##  Running the Main Program
+
+To run the interactive graph algorithms program, use:
+
+```bash
+./graph_program
+```
+
+This program allows the user to manually enter a graph and run algorithms like **BFS**, **DFS**, **Dijkstra**, **Prim**, and **Kruskal** from a command-line menu.
+
+
+
 
 ##  Test Example: BFS - Disconnected Components
 
