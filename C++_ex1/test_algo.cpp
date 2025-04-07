@@ -73,7 +73,7 @@ TEST_CASE("BFS - Full Connected Graph") {
     CHECK(bfsTree.isEdge(0, 3));// all vertices add directly from the root
 }
 
-////////////////
+
 TEST_CASE("BFS - Tree structure correctness (layered)") {
     Graph g(6);
     // BFS should go: 0 -> 1,2 -> 3
@@ -112,10 +112,6 @@ TEST_CASE("BFS - Star topology") {
         CHECK(bfsTree.isEdge(0, i));
     }
 }
-
-
-
-/////////////
 
 
 
@@ -196,7 +192,7 @@ TEST_CASE("DFS - disconnected graph") {
 
 
 
-// ------------------------ Dijkstra ------------------------
+//////////////////////// Dijkstra ////////////////
 TEST_CASE("Dijkstra Algorithm - Basic Cases") {
     Graph g1(0);
     CHECK(Algorithms::dijkstra(g1, 0).getNumVertices() == 0);
@@ -242,14 +238,13 @@ TEST_CASE("Dijkstra should throw on negative weight") {
     CHECK_THROWS_WITH(Algorithms::dijkstra(g, 0), "Dijkstra cannot handle negative edge weights");
 }
 
-/////////////////////////
 TEST_CASE("Dijkstra - Result tree has no cycles") {
     Graph g(5);
     g.addEdge(0, 1, 2);
     g.addEdge(1, 2, 3);
     g.addEdge(1, 3, 1);
     g.addEdge(3, 4, 4);
-    g.addEdge(0, 4, 100); // לא ייכנס בגלל משקל גבוה
+    g.addEdge(0, 4, 100); 
 
     Graph result = Algorithms::dijkstra(g, 0);
 
@@ -278,11 +273,11 @@ TEST_CASE("Dijkstra - Result tree has no cycles") {
 
 
 
-/////////////////
 
 
 
-// ------------------------ Prim ------------------------
+
+/////////////////////////// Prim ////////////////////////////
 TEST_CASE("Prim Algorithm - Basic Cases") {
     Graph g1(0);
     CHECK(Algorithms::prim(g1).getNumVertices() == 0);
@@ -317,7 +312,7 @@ TEST_CASE("Prim Algorithm - Edge Cases") {
 
 
 
-///////////
+
 TEST_CASE("Prim with Negative Weights") {
     Graph g(4);
     g.addEdge(0, 1, -2);
@@ -345,9 +340,9 @@ TEST_CASE("Prim throws on disconnected graph") {
 }
 
 
-//////////
 
-// ------------------------ Kruskal ------------------------
+
+////////////////////////// Kruskal //////////////////////////
 TEST_CASE("Kruskal Algorithm - Basic Cases") {
     Graph g1(0);
     CHECK(Algorithms::kruskal(g1).getNumVertices() == 0);
@@ -377,7 +372,7 @@ TEST_CASE("Kruskal Algorithm - Edge Cases") {
 
 
 
-///////////
+
 
 TEST_CASE("Kruskal with Negative Weights") {
     Graph g(4);
@@ -396,9 +391,9 @@ TEST_CASE("Kruskal with Negative Weights") {
 
 
 
-//////////
 
-// ------------------------ Print Example ------------------------
+
+/////////////////////// Print Example
 TEST_CASE("Visual Print of BFS Tree") {
     Graph g(6);
     g.addEdge(0, 1);
