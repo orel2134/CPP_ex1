@@ -118,11 +118,17 @@ make run_helper_tests   # Run helpers (Queue + DisjointSet) tests
 make run_all_tests
 ```
 
-### Run Main
+
+##  Running the Main Program
+
+To run the interactive graph algorithms program, use:
 
 ```bash
-make run_main
+./graph_program
 ```
+
+This program allows the user to manually enter a graph and run algorithms like **BFS**, **DFS**, **Dijkstra**, **Prim**, and **Kruskal** from a command-line menu.
+
 
 ---
 
@@ -135,17 +141,6 @@ make run_main
 | **Dijkstra** | Find shortest paths from source | Shortest Path Tree  |
 | **Prim** | Minimum Spanning Tree (MST) | MST returns a graph showing the tree. |
 | **Kruskal** | Minimum Spanning Tree | MST using edge sorting + disjoint and returns a graph showing the tree. |
-
----
-##  Running the Main Program
-
-To run the interactive graph algorithms program, use:
-
-```bash
-./graph_program
-```
-
-This program allows the user to manually enter a graph and run algorithms like **BFS**, **DFS**, **Dijkstra**, **Prim**, and **Kruskal** from a command-line menu.
 
 
 
