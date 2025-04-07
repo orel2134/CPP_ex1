@@ -185,16 +185,7 @@ TEST_CASE("Edge Weight Updates and Validation") {
     CHECK(g.weight(1, 0) == 5);
 }
 
-TEST_CASE("Graph - Print (visual check only)") {
-    Graph g(4);
-    g.addEdge(0, 1, 1);
-    g.addEdge(0, 2, 1);
-    g.addEdge(2, 3, 1);
 
-    std::cout << "\n--- Printing Graph Structure ---\n";
-    g.printGraph(0);  // visual output test
-    std::cout << "--------------------------------\n";
-}
 
 TEST_CASE("Isolated Vertices Test") {
     Graph g(5);
